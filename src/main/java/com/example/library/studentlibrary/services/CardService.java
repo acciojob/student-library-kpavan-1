@@ -15,11 +15,9 @@ public class CardService {
     CardRepository cardRepository3;
 
     public Card createAndReturn(Student student){
-        Card card = createAndReturn(student);
+        Card card = null;
         //link student with a new card
         return card;
-        //link student with a new card
-
     }
 
     public void deactivateCard(int student_id){

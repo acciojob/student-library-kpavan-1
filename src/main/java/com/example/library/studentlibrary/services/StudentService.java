@@ -25,7 +25,7 @@ public class StudentService {
     }
 
     public Student getDetailsById(int id){
-        Student student = studentRepository4.getOne(id);
+        Student student =studentRepository4.findById(id).get();
 
         return student;
     }
@@ -40,8 +40,8 @@ public class StudentService {
 
     public void deleteStudent(int id){
         //Delete student and deactivate corresponding card
-        cardService4.deactivateCard(id);
         studentRepository4.deleteById(id);
+        cardService4.deactivateCard(id);
 
     }
 }
